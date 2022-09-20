@@ -14,6 +14,6 @@
 ## Milestones
 
 * [ ] Caleb Phelps
-  * [ ] 
+  * [ ] ...
 * [ ] Benjamin Bowles
-  * [ ] 
+  * [ ] ...
