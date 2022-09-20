@@ -1,0 +1,70 @@
+{
+	"folders": [
+		{
+			"name": "All",
+			"path": ".."
+		},
+		{
+			"name": "Source",
+			"path": "../src"
+		},
+		{
+			"name": "Markdown",
+			"path": "../md"
+		}
+		{
+			"name": "VSCode",
+			"path": "../.vscode"
+		},
+		{
+			"name": "Github",
+			"path": "../.github"
+		}
+	],
+	"settings": {
+		"files.exclude": {
+			"**/.github": true,
+			"**/.vscode": true,
+			"**/md": true,
+			"**/src": true,
+		},
+		"files.associations": {},
+		"editor.codeActionsOnSave": {
+			"source.fixAll": true,
+			"source.organizeImports": true
+		},
+		"editor.quickSuggestions": {
+			"other": "on",
+			"comments": "on",
+			"strings": "on"
+		},
+		"material-icon-theme.files.associations": {},
+		"material-icon-theme.folders.associations": {},
+		"editor.wordWrap": "off",
+		"editor.fontFamily": "Operator Mono",
+		"editor.fontLigatures": true,
+		"editor.lineHeight": 24,
+		"terminal.integrated.fontFamily": "monospace",
+		"terminal.integrated.fontSize": 14,
+		"terminal.integrated.lineHeight": 1.5,
+		"terminal.integrated.letterSpacing": 0,
+		"editor.tokenColorCustomizations": {
+			"comments": "#FF9000",
+		},
+		"material-icon-theme.folders.color": "#90a4ae",
+		"workbench.colorCustomizations": {},
+		"workbench.preferredDarkColorTheme": "GitHub Dark",
+		"workbench.preferredLightColorTheme": "GitHub Light",
+		"cSpell.words": [
+			"msedge",
+		]
+	},
+	"tasks": {
+		"version": "2.0.0",
+		"tasks": []
+	},
+	"launch": {
+		"configurations": [],
+		"compounds": []
+	},
+}
