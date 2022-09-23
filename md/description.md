@@ -1,6 +1,6 @@
 # Description
 
-Due to our vertical approach, students moving in to our high school program from our middle school program have had extensive coding exposure and practice. Students in this pathway will earn their Technology endorsement with a focus on computer science. During the course of their studies, students will become highly proficient in the use of HTLM and Java.
+Due to our vertical approach, students moving in to our high school program from our middle school program have had extensive coding exposure and practice. Students in this pathway will earn their Technology endorsement with a focus on computer science. During the course of their studies, students will become highly proficient in the use of HTML and Java.
 
 Specialization - Computer Science, with a focus on different computer language including HTML and Java.
 
