@@ -45,4 +45,6 @@
     * [ ] AP Computer Science Principles (H3007L)
     * [ ] Practicum `???`
 * [ ] Benjamin Bowles
-  * [ ] ...
+  * [x] Create converter from markdown to html
+  * [ ] Create navigation and page loading system
+  * [ ] Style the page using CSS to make it look good.
