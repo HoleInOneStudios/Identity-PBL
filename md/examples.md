@@ -1,4 +1,4 @@
-# examples
+# Examples
 
 ## Fundamentals of Computer Science (H3032L)
 
