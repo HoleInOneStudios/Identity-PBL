@@ -55,6 +55,27 @@ def Get_HTML_Index():
     print('Finished build HTML nav content')
     open('src/build/nav.html', 'w').write(html_nav)
 
+    # == Add to index ==
+    with open('src/index.html', 'r') as f:
+        index = f.read()
+
+        startM = '<main>'
+        endM = '</main>'
+        repM = index[index.find(startM)+len(startM):index.rfind(endM)]
+
+        startN = '<nav>'
+        endN = '</nav>'
+        repN = index[index.find(startN)+len(startN):index.rfind(endN)]
+
+        index = index.replace(repN, html_nav)
+        index = index.replace(repM, html_main)
+
+        # write back into index
+        open('src/index.html', 'w').write(index)
+
+    # == Finished Indication ==
+    print('Finished build index.html')
+
 if __name__ == '__main__':
     Convert_To_Markdown()
     Get_HTML_Index()
