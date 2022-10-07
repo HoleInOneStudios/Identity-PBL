@@ -61,7 +61,15 @@
 	},
 	"tasks": {
 		"version": "2.0.0",
-		"tasks": []
+		"tasks": [
+			{
+				"group": "build",
+				"label": "Build",
+				"type": "shell",
+				"command": "python build.py",
+				"problemMatcher": []
+			}
+		]
 	},
 	"launch": {
 		"configurations": [],
