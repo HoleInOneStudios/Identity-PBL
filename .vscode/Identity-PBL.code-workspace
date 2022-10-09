@@ -57,7 +57,15 @@
 		"workbench.preferredLightColorTheme": "GitHub Light",
 		"cSpell.words": [
 			"msedge",
-		]
+		],
+		"zenMode.centerLayout": false,
+		"zenMode.fullScreen": true,
+		"zenMode.hideActivityBar": false,
+		"zenMode.hideTabs": false,
+		"zenMode.hideStatusBar": false,
+		"zenMode.hideLineNumbers": false,
+		"zenMode.silentNotifications": true,
+		"zenMode.restore": true
 	},
 	"tasks": {
 		"version": "2.0.0",

@@ -6,7 +6,7 @@
 
 |                        | Exceeds Expectations | Expectations                                                                                                                                                          | Does Not Meet Expectations |
 | ---------------------- | -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------- |
-| Pathway - 5pts         |  X                   | Product clearly displays team's pathway                                                                                                                               |                            |
+| Pathway - 5pts         | X                    | Product clearly displays team's pathway                                                                                                                               |                            |
 | Usefulness - 5pts      |                      | Product is of a useful size (physical or timely), and is positive and persuasive in tone to serve as a recruitment piece.                                             |                            |
 | Accuracy - 5pts        |                      | Final product accurately reflects the culture of identity of the STEM Academy as a whole and at least some of the students within it.                                 |                            |
 | Professionalism - 5pts |                      | Product is made to a professional standard in its medium; it is neat, clear, and pleasant to look at, as well as conveys information in a useful order and/or format. |                            |
@@ -46,5 +46,21 @@
     * [ ] Practicum `???`
 * [ ] Benjamin Bowles
   * [x] Create converter from markdown to html
+  * [ ] build to page using a custom python file
   * [ ] Create navigation and page loading system
   * [ ] Style the page using CSS to make it look good.
+  * [ ] Sections
+    * [ ] description
+      * [ ] styling and formatting
+    * [ ] Courses
+      * [ ] Panel List
+        * [ ] horizontal scroll
+    * [ ] Examples
+      * [ ] Panel List
+        * [ ] horizontal scroll
+    * [ ] students
+      * [ ] Panel List
+        * [ ] horizontal scroll
+    * [ ] teachers
+      * [ ] Panel List
+        * [ ] horizontal scroll

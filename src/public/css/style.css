@@ -1,4 +1,15 @@
-html {}
+:root {
+    /* Color Theme */
+    --space-cadet: #141b41ff;
+    --green-blue: #306bacff;
+    --eton-blue: #7fc29bff;
+    --yellow-green-crayola: #b5ef8aff;
+    --magnolia: #fcf7ffff;
+}
+
+html {
+    color: var(--space-cadet);
+}
 
 body {
     margin: 0;
@@ -10,8 +21,6 @@ header {
     font-size: 5ch;
 
     margin: 0;
-
-    background-color: rgb(0, 60, 128);
 }
 
 nav {
@@ -23,19 +32,12 @@ nav {
 
     align-items: center;
     justify-content: center;
-
-    background-color: navy;
 }
 
 nav>a {
     padding: 1em 2em 1em 2em;
-    color: greenyellow;
 
     text-decoration: none;
-}
-
-nav>a:hover {
-    background-color: blue;
 }
 
 h1,
@@ -44,5 +46,19 @@ h3,
 h4,
 h5,
 h6 {
+    text-align: center;
+}
+
+#courses>div,
+#students>div,
+#teachers>div,
+#students>div>div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-content: start;
+}
+
+footer {
     text-align: center;
 }

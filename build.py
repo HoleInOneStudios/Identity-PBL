@@ -15,6 +15,12 @@ class colors:
     UNDERLINE = '\033[4m'
 
 
+def delete_files():
+    files = os.listdir('src/build/views')
+    for file in files:
+        os.remove('src/build/views/' + file)
+        print('Deleted src/build/views/' + file)
+
 def Convert_To_Markdown():
     converted = 0
     total_files = 0
@@ -38,9 +44,10 @@ def Get_HTML_Index():
     for file in os.listdir('src/build/views'):
         if file.endswith('.html'):
             section = "<section id=\""+os.path.splitext( ( os.path.basename(file) ) )[0]+"\">\n"
+            section += "<h1>"+os.path.splitext( ( os.path.basename(file) ) )[0].capitalize()+"</h1>\n<div>\n"
             with open('src/build/views/' + file, 'r') as f:
                 content = f.read()
-                section += content + "\n</section>\n"
+                section += content + "\n</div>\n</section>\n"
 
             # == Add to main ==
             html_main += section
@@ -56,19 +63,11 @@ def Get_HTML_Index():
     open('src/build/nav.html', 'w').write(html_nav)
 
     # == Add to index ==
-    with open('src/index.html', 'r') as f:
+    with open('src/build/index.html', 'r') as f:
         index = f.read()
 
-        startM = '<main>'
-        endM = '</main>'
-        repM = index[index.find(startM)+len(startM):index.rfind(endM)]
-
-        startN = '<nav>'
-        endN = '</nav>'
-        repN = index[index.find(startN)+len(startN):index.rfind(endN)]
-
-        index = index.replace(repN, html_nav)
-        index = index.replace(repM, html_main)
+        index = index.replace('<!--nav-->', html_nav)
+        index = index.replace('<!--main-->', html_main)
 
         # write back into index
         open('src/index.html', 'w').write(index)
@@ -77,6 +76,7 @@ def Get_HTML_Index():
     print('Finished build index.html')
 
 if __name__ == '__main__':
+    delete_files()
     Convert_To_Markdown()
     Get_HTML_Index()
 
