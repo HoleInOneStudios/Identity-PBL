@@ -1,19 +1,15 @@
-## Student Name
+![<Student portrait>]()
 
-__`<response here>`__
+### __`Student Name`__
 
-### Student portrait
-
-![__`<response here>`__]()
-
-### Why the pathway is important?
+#### Why the pathway is important?
 
  __`<response here>`__
 
-### Why students should choose this pathway over others?
+#### Why students should choose this pathway over others?
 
  __`<response here>`__
 
-### Why do they like the pathway?
+#### Why do they like the pathway?
 
  __`<response here>`__

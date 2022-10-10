@@ -1,15 +1,4 @@
-:root {
-    /* Color Theme */
-    --space-cadet: #141b41ff;
-    --green-blue: #306bacff;
-    --eton-blue: #7fc29bff;
-    --yellow-green-crayola: #b5ef8aff;
-    --magnolia: #fcf7ffff;
-}
-
-html {
-    color: var(--space-cadet);
-}
+@import url('https://unpkg.com/@primer/css@^20.2.4/dist/primer.css');
 
 body {
     margin: 0;
@@ -30,8 +19,8 @@ nav {
     margin: 0;
     padding: 0;
 
-    align-items: center;
-    justify-content: center;
+    align-items: baseline;
+    justify-content: baseline;
 }
 
 nav>a {
@@ -51,14 +40,34 @@ h6 {
 
 #courses>div,
 #students>div,
-#teachers>div,
-#students>div>div {
+#teachers>div {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    padding: 1em;
+}
+
+#courses>div>div,
+#students>div>div,
+#teachers>div>div {
+    padding: 2em;
+    margin: 1em;
+}
+
+section {
+    padding: 10vh;
+
+    margin: 0;
+
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: start;
+    justify-content: center;
 }
 
 footer {
     text-align: center;
+
+    padding: 5vh;
+    background-color: #f5f5f5;
+    border-top: 1px solid #e1e4e8;
 }
