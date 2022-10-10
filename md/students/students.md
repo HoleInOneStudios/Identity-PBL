@@ -2,14 +2,14 @@
 
 ### __`Student Name`__
 
-#### Why the pathway is important?
+#### Why I think the technology pathway is important
 
  __`<response here>`__
 
-#### Why students should choose this pathway over others?
+#### Why I think students should choose the technology pathway over others
 
  __`<response here>`__
 
-#### Why do they like the pathway?
+#### Why I like the technology pathway?
 
  __`<response here>`__

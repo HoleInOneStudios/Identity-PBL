@@ -1,5 +1,9 @@
 @import url('https://unpkg.com/@primer/css@^20.2.4/dist/primer.css');
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -54,9 +58,9 @@ h6 {
 }
 
 section {
-    padding: 10vh;
 
     margin: 0;
+    padding: 5vh;
 
     display: flex;
     flex-direction: column;
