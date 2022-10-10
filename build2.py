@@ -1,7 +1,7 @@
 import os
 
 import markdown
-from markdown.extensions.tables import * 
+from markdown.extensions.tables import *
 
 
 class tColors:
@@ -23,9 +23,11 @@ description = ""
 html_out = ""
 
 def Reset_Build():
+    # Remove old build
     files = os.listdir('src/build/views')
     for file in files:
         os.remove('src/build/views/' + file)
+    print(tColors.BOLD + tColors.BLUE + "=======Removed old build=======" + tColors.NORMAL)
 
 def convert_markdown_to_html():
     global description
@@ -99,6 +101,7 @@ def write_html_to_file():
         index = index.replace("<!--main-->", html_out)
 
         open('src/index.html', 'w').write(index)
+    print(tColors.BOLD + tColors.BLUE + "=======Wrote HTML to file=======" + tColors.NORMAL)
 
 if __name__ == '__main__':
     os.system('cls')
@@ -106,3 +109,5 @@ if __name__ == '__main__':
     convert_markdown_to_html()
     build_html()
     write_html_to_file()
+
+    print(tColors.BOLD + tColors.GREEN + "=======Build Complete=======" + tColors.NORMAL)
