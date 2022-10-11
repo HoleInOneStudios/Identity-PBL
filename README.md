@@ -40,27 +40,25 @@
   * [ ] get examples of coursework from all the courses (Put it in the spots in examples.md):
     * [ ] Fundamentals of Computer Science (H3032L)
     * [ ] Computer Science I Pre-AP (H3005L)
-    * [ ] Computer Science II Pre-AP (H3006L)
     * [ ] AP Computer Science A (H3010L)
-    * [ ] AP Computer Science Principles (H3007L)
     * [ ] Practicum `???`
-* [ ] Benjamin Bowles
+* [x] Benjamin Bowles
   * [x] Create converter from markdown to html
-  * [ ] build to page using a custom python file
-  * [ ] Create navigation and page loading system
-  * [ ] Style the page using CSS to make it look good.
-  * [ ] Sections
-    * [ ] description
-      * [ ] styling and formatting
-    * [ ] Courses
-      * [ ] Panel List
-        * [ ] horizontal scroll
-    * [ ] Examples
-      * [ ] Panel List
-        * [ ] horizontal scroll
-    * [ ] students
-      * [ ] Panel List
-        * [ ] horizontal scroll
-    * [ ] teachers
-      * [ ] Panel List
-        * [ ] horizontal scroll
+  * [x] build to page using a custom python file
+  * [x] Create navigation and page loading system
+  * [x] Style the page using CSS to make it look good.
+  * [x] Sections
+    * [x] description
+      * [x] styling and formatting
+    * [x] Courses
+      * [x] Panel List
+        * [x] horizontal scroll
+    * [x] Examples
+      * [x] Panel List
+        * [x] horizontal scroll
+    * [x] students
+      * [x] Panel List
+        * [x] horizontal scroll
+    * [x] teachers
+      * [x] Panel List
+        * [x] horizontal scroll
