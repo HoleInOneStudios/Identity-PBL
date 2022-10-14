@@ -80,7 +80,7 @@ def build_html():
 
     # == Students ==
     html_out += "<section id=\"students\">\n"
-    html_out += "<h1>Students</h1>\n<div>\n"
+    html_out += "<h1>Student Testimonies</h1>\n<div>\n"
     for s in students:
         html_out += s + "\n"
     html_out += "</div>\n</section>\n"
