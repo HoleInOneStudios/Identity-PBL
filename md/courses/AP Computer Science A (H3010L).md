@@ -4,4 +4,4 @@ This is the last of the programming courses and is "equivalent to a first-semest
 
 #### Examples of Coursework
 
-__`<response here>`__
+![example](./public/image/apExample.png)
