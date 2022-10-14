@@ -19,11 +19,11 @@
 >
 > main
 > >
-> > * [About the pathway](./md/description.md)
-> > * [Courses in the pathway](./md/courses.md)
-> > * [Example coursework](./md/examples.md)
-> > * [Teacher testimonies](./md/teachers.md)
-> > * [Student testimonies](./md/students.md)
+> > * About the pathway
+> > * Courses in the pathway
+> > * Example coursework
+> > * Teacher testimonies
+> > * Student testimonies
 >
 > footer
 > >
