@@ -37,7 +37,7 @@
     * [ ] Why the pathway is important?
     * [ ] Why students should choose this pathway over others?
     * [ ] Why do they like the pathway?
-    * [ ] GOOGLE FORM LINK ![Here](https://forms.gle/4nQaBPgMga2XVb9H6)
+    * [ ] GOOGLE FORM LINK [Here](https://forms.gle/4nQaBPgMga2XVb9H6)
   * [ ] get examples of coursework from all the courses (Put it in the spots in examples.md):
     * [ ] Fundamentals of Computer Science (H3032L)
     * [ ] Computer Science I Pre-AP (H3005L)
