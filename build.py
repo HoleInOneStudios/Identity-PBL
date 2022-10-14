@@ -1,9 +1,10 @@
 import os
 
 import markdown
+from markdown.extensions.tables import *
 
 
-class colors:
+class tColors:
     HEADER = '\033[95m'
     BLUE = '\033[94m'
     CYAN = '\033[96m'
@@ -14,71 +15,100 @@ class colors:
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
 
+courses = []
+students = []
+teachers = []
+description = ""
 
-def delete_files():
+html_out = ""
+
+def Reset_Build():
+    # Remove old build
     files = os.listdir('src/build/views')
     for file in files:
         os.remove('src/build/views/' + file)
-        print('Deleted src/build/views/' + file)
+    print(tColors.BOLD + tColors.GREEN + " ✓ "+ tColors.BLUE + "Removed old build" + tColors.NORMAL)
 
-def Convert_To_Markdown():
-    converted = 0
-    total_files = 0
+def convert_markdown_to_html():
+    global description
+
+    # "Description" MD to HTML
+    description += markdown.markdown(open('md/description.md', 'r').read(), extensions=[TableExtension()])
+    print(tColors.BOLD  + tColors.GREEN + " ✓ " + tColors.BLUE + "Description" + tColors.NORMAL ) #+ description)
+
+    # "Courses" MD to HTML
+    for c in os.listdir('md/courses'):
+        if c.endswith('.md'):
+            tempC = "<div>"
+            tempC += markdown.markdown(open('md/courses/' + c, 'r').read())
+            tempC += "</div>"
+            courses.append(tempC)
+    print(tColors.BOLD  + tColors.GREEN + " ✓ " + tColors.BLUE + "Courses and Example Coursework" + tColors.NORMAL ) #+ str(courses))
+
+    # "Students" MD to HTML
+    for s in os.listdir('md/students'):
+        if s.endswith('.md'):
+            tempS = "<div>"
+            tempS += markdown.markdown(open('md/students/' + s, 'r').read())
+            tempS += "</div>"
+            students.append(tempS)
+    print(tColors.BOLD  + tColors.GREEN + " ✓ " + tColors.BLUE + "Students" + tColors.NORMAL ) #+ str(students))
+
+    # "Teachers" MD to HTML
+    for t in os.listdir('md/teachers'):
+        if t.endswith('.md'):
+            tempT = "<div>"
+            tempT += markdown.markdown(open('md/teachers/' + t, 'r').read())
+            tempT += "</div>"
+            teachers.append(tempT)
+    print(tColors.BOLD  + tColors.GREEN + " ✓ " + tColors.BLUE + "Teachers" + tColors.NORMAL ) #+ str(teachers))
+
+def build_html():
+    global html_out
     
-    mds = os.listdir('md')
-    total_files = len(mds)
+    # == Description ==
+    html_out += "<section id=\"description\">\n"
+    html_out += "<h1>Description</h1>\n<div>\n"
+    html_out += description + "\n</div>\n</section>\n"
+
+    # == Courses ==
+    html_out += "<section id=\"courses\">\n"
+    html_out += "<h1>Courses</h1>\n<div>\n"
+    for c in courses:
+        html_out += c + "\n"
+    html_out += "</div>\n</section>\n"
+
+    # == Students ==
+    html_out += "<section id=\"students\">\n"
+    html_out += "<h1>Students</h1>\n<div>\n"
+    for s in students:
+        html_out += s + "\n"
+    html_out += "</div>\n</section>\n"
     
-    for md in mds:
-        markdown.markdownFromFile(input='md/' + md, output='src/build/views/' + md[:-3] + '.html', encoding='utf-8')
-        converted += 1
-        # == Progress Indication ==
-        print('Converted md/' + md + ' to src/build/views/' + md[:-3] + '.html (' + str(converted) + '/' + str(total_files) + ')')
-    
-    # == Finished Indication ==
-    print('Finished converting ' + str(converted) + ' files')
+    # == Teachers ==
+    html_out += "<section id=\"teachers\">\n"
+    html_out += "<h1>Teachers</h1>\n<div>\n"
+    for t in teachers:
+        html_out += t + "\n"
+    html_out += "</div>\n</section>\n"
 
-def Get_HTML_Index():
-    html_main = ""
-    html_nav = ""
+    print(tColors.BOLD  + tColors.GREEN + " ✓ " + tColors.BLUE + "Raw HTML" + tColors.NORMAL ) #+ html_out)
 
-    for file in os.listdir('src/build/views'):
-        if file.endswith('.html'):
-            section = "<section id=\""+os.path.splitext( ( os.path.basename(file) ) )[0]+"\">\n"
-            section += "<h1>"+os.path.splitext( ( os.path.basename(file) ) )[0].capitalize()+"</h1>\n<div>\n"
-            with open('src/build/views/' + file, 'r') as f:
-                content = f.read()
-                section += content + "\n</div>\n</section>\n"
-
-            # == Add to main ==
-            html_main += section
-            # == Add to nav ==
-            html_nav += '<a href="#' + os.path.splitext( ( os.path.basename(file) ) )[0] + '">' + file[:-5].capitalize() + '</a>\n'
-
-    # == Finished Main Indication ==
-    print('Finished build HTML main content')
-    open('src/build/main.html', 'w').write(html_main)
-
-    # == Finished Nav Indication ==
-    print('Finished build HTML nav content')
-    open('src/build/nav.html', 'w').write(html_nav)
-
-    # == Add to index ==
+def write_html_to_file():
     with open('src/build/index.html', 'r') as f:
         index = f.read()
+        
+        index = index.replace("<!--main-->", html_out)
 
-        index = index.replace('<!--nav-->', html_nav)
-        index = index.replace('<!--main-->', html_main)
-
-        # write back into index
         open('src/index.html', 'w').write(index)
 
-    # == Finished Indication ==
-    print('Finished build index.html')
+    print(tColors.BOLD  + tColors.GREEN + " ✓ " + tColors.BLUE + "Wrote HTML to file" + tColors.NORMAL)
 
 if __name__ == '__main__':
-    delete_files()
-    Convert_To_Markdown()
-    Get_HTML_Index()
+    os.system('cls')
+    Reset_Build()
+    convert_markdown_to_html()
+    build_html()
+    write_html_to_file()
 
-
-
+    print(tColors.BOLD + tColors.GREEN + "===Build Complete===" + tColors.NORMAL)
