@@ -89,6 +89,7 @@ def build_html():
             html_out += s + "\n"
     else:
         html_out += "<p style='text-align:center;'>There are no student testimonies yet.</p>\n"
+    html_out += "<p style='text-align:center;'>If you are a student and would like to add your testimony click <a href='https://forms.gle/4nQaBPgMga2XVb9H6'>here</a>.</p>"
     html_out += "</div>\n</section>\n"
     
     # == Teachers ==
