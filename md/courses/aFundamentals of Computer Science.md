@@ -4,4 +4,4 @@
 
 #### Example of Coursework
 
-__`<response here>`__
+none

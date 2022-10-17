@@ -74,22 +74,31 @@ def build_html():
     # == Courses ==
     html_out += "<section id=\"courses\">\n"
     html_out += "<h1>Courses</h1>\n<div>\n"
-    for c in courses:
-        html_out += c + "\n"
+    if len(courses) > 0:
+        for c in courses:
+            html_out += c + "\n"
+    else:
+        html_out += "<p style='text-align:center;'>There are no courses yet.</p>\n"
     html_out += "</div>\n</section>\n"
 
     # == Students ==
     html_out += "<section id=\"students\">\n"
     html_out += "<h1>Student Testimonies</h1>\n<div>\n"
-    for s in students:
-        html_out += s + "\n"
+    if len(students) > 0:
+        for s in students:
+            html_out += s + "\n"
+    else:
+        html_out += "<p style='text-align:center;'>There are no student testimonies yet.</p>\n"
     html_out += "</div>\n</section>\n"
     
     # == Teachers ==
     html_out += "<section id=\"teachers\">\n"
     html_out += "<h1>Teachers</h1>\n<div>\n"
-    for t in teachers:
-        html_out += t + "\n"
+    if len(teachers) > 0:
+        for t in teachers:
+            html_out += t + "\n"
+    else:
+        html_out += "<p style='text-align:center;'>There are no teachers yet.</p>\n"
     html_out += "</div>\n</section>\n"
 
     print(tColors.BOLD  + tColors.GREEN + " ✓ " + tColors.BLUE + "Raw HTML" + tColors.NORMAL ) #+ html_out)

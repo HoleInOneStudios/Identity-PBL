@@ -4,4 +4,4 @@ The Practicum experience is all about career exploration. The focus, and goal, i
 
 #### Example of Coursework
 
-__`<response here>`__
+none
