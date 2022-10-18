@@ -41,7 +41,7 @@
   * [ ] get examples of coursework from all the courses (Put it in the spots in examples.md):
     * [ ] Fundamentals of Computer Science (H3032L)
     * [ ] Computer Science I Pre-AP (H3005L)
-    * [ ] AP Computer Science A (H3010L)
+    * [x] AP Computer Science A (H3010L)
     * [ ] Practicum `???`
 * [x] Benjamin Bowles
   * [x] Create converter from markdown to html
