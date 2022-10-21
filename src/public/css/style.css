@@ -125,3 +125,11 @@ section>div>div>p>img:hover {
 section>div>div>p>img {
     transition: all 0.5s ease;
 }
+
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 48
+}
