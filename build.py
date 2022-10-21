@@ -14,6 +14,12 @@ class tColors:
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
 
+    CHECK = BOLD  + GREEN + " ✓ " + NORMAL
+    CROSS = BOLD + FAIL + " ✗ " + NORMAL
+    INFO = BOLD + BLUE + " ℹ " + NORMAL
+    WARN = BOLD + WARNING + " ⚠ " + NORMAL
+    HEAD = BOLD + HEADER + " ➜ " + NORMAL
+
 html_out = ""
 
 def Reset_Build():
@@ -21,14 +27,13 @@ def Reset_Build():
     files = os.listdir('src/build/views')
     for file in files:
         os.remove('src/build/views/' + file)
-    print(tColors.BOLD + tColors.GREEN + " ✓ "+ tColors.BLUE + "Removed old build" + tColors.NORMAL)
+    print(tColors.CHECK + tColors.BLUE + "Removed old build" + tColors.NORMAL)
 
 class MD_to_HTML:
     def get_description():
         # "Description" MD to HTML
         description = markdown.markdown(open('md/description.md', 'r').read())
-        print(tColors.BOLD  + tColors.GREEN + " ✓ " + tColors.BLUE + "Description" + tColors.NORMAL )
-
+        print(tColors.CHECK + tColors.BLUE + "Description" + tColors.NORMAL )
         return description
     def get_courses():
         # "Courses" MD to HTML
@@ -39,8 +44,7 @@ class MD_to_HTML:
                 tempC += markdown.markdown(open('md/courses/' + c, 'r').read())
                 tempC += "</div>"
                 courses.append(tempC)
-        print(tColors.BOLD  + tColors.GREEN + " ✓ " + tColors.BLUE + "Courses and Example Coursework" + tColors.NORMAL ) #+ str(courses))
-
+        print(tColors.CHECK + tColors.BLUE + "Courses and Example Coursework" + tColors.NORMAL )
         return courses
     def get_students():
         # "Students" MD to HTML
@@ -51,8 +55,7 @@ class MD_to_HTML:
                 tempS += markdown.markdown(open('md/students/' + s, 'r').read())
                 tempS += "</div>"
                 students.append(tempS)
-        print(tColors.BOLD  + tColors.GREEN + " ✓ " + tColors.BLUE + "Students" + tColors.NORMAL )
-
+        print(tColors.CHECK + tColors.BLUE + "Students" + tColors.NORMAL )
         return students
     def get_teachers():
         # "Teachers" MD to HTML
@@ -63,8 +66,7 @@ class MD_to_HTML:
                 tempT += markdown.markdown(open('md/teachers/' + t, 'r').read())
                 tempT += "</div>"
                 teachers.append(tempT)
-        print(tColors.BOLD  + tColors.GREEN + " ✓ " + tColors.BLUE + "Teachers" + tColors.NORMAL )
-
+        print(tColors.CHECK + tColors.BLUE + "Teachers" + tColors.NORMAL )
         return teachers
 
 class HTML_Build:
@@ -143,7 +145,7 @@ class HTML_Build:
         # == Teachers ==
         out += HTML_Build.build_teachers()
 
-        print(tColors.BOLD  + tColors.GREEN + " ✓ " + tColors.BLUE + "Raw HTML" + tColors.NORMAL ) #+ html_out)
+        print(tColors.CHECK + tColors.BLUE + "Raw HTML" + tColors.NORMAL ) #+ html_out)
 
         return out
 
@@ -155,7 +157,7 @@ def write_html_to_file():
 
         open('src/index.html', 'w').write(index)
 
-    print(tColors.BOLD  + tColors.GREEN + " ✓ " + tColors.BLUE + "Wrote HTML to file" + tColors.NORMAL)
+    print(tColors.CHECK + tColors.BLUE + "Wrote HTML to file" + tColors.NORMAL)
 
 if __name__ == '__main__':
     os.system('cls')
