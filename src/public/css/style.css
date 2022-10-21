@@ -115,7 +115,7 @@ footer {
     border-top: 1px solid #e1e4e8;
 }
 
-img:active {
+img:hover {
     transform: scale(150%);
 
     transition: all 0.5s ease;
