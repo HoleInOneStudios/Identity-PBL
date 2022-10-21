@@ -39,8 +39,8 @@
     * [ ] Why do they like the pathway?
     * [x] GOOGLE FORM LINK [Here](https://forms.gle/4nQaBPgMga2XVb9H6)
   * [ ] get examples of coursework from all the courses (Put it in the spots in examples.md):
-    * [ ] Fundamentals of Computer Science (H3032L)(I found a loop hole that was takeing the quiz in the python cource from my intern early, because the teacher never added a password) ![image](https://user-images.githubusercontent.com/114014691/197248345-72db708c-34e3-4ddd-a94d-851a282276da.png)
-    * [ ] Computer Science I Pre-AP (H3005L) (I can't find any so I will ask someone today)
+    * [x] Fundamentals of Computer Science (H3032L)
+    * [ ] Computer Science I Pre-AP (H3005L)
     * [x] AP Computer Science A (H3010L)
     * [ ] Practicum `???`
 * [x] Benjamin Bowles
