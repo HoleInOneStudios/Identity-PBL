@@ -37,10 +37,10 @@
     * [ ] Why the pathway is important?
     * [ ] Why students should choose this pathway over others?
     * [ ] Why do they like the pathway?
-    * [ ] GOOGLE FORM LINK [Here](https://forms.gle/4nQaBPgMga2XVb9H6)
+    * [ ] GOOGLE FORM LINK [Here](https://forms.gle/4nQaBPgMga2XVb9H6) (done check the form)
   * [ ] get examples of coursework from all the courses (Put it in the spots in examples.md):
-    * [ ] Fundamentals of Computer Science (H3032L)
-    * [ ] Computer Science I Pre-AP (H3005L)
+    * [ ] Fundamentals of Computer Science (H3032L)(Need to wait till 7th to do it. Cant acces course work)
+    * [ ] Computer Science I Pre-AP (H3005L) (same)
     * [x] AP Computer Science A (H3010L)
     * [ ] Practicum `???`
 * [x] Benjamin Bowles
