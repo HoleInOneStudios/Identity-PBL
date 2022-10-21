@@ -115,12 +115,13 @@ footer {
     border-top: 1px solid #e1e4e8;
 }
 
-img:hover {
+section>div>div>p>img:hover {
     transform: scale(150%);
+    box-shadow: 0 0 10px #333;
 
     transition: all 0.5s ease;
 }
 
-img {
+section>div>div>p>img {
     transition: all 0.5s ease;
 }
