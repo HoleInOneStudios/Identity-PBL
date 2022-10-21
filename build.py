@@ -1,7 +1,6 @@
 import os
 
 import markdown
-from markdown.extensions.tables import *
 
 
 class tColors:
@@ -15,11 +14,6 @@ class tColors:
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
 
-courses = []
-students = []
-teachers = []
-description = ""
-
 html_out = ""
 
 def Reset_Build():
@@ -29,14 +23,16 @@ def Reset_Build():
         os.remove('src/build/views/' + file)
     print(tColors.BOLD + tColors.GREEN + " ✓ "+ tColors.BLUE + "Removed old build" + tColors.NORMAL)
 
-def convert_markdown_to_html():
-    global description
-
+def get_description():
     # "Description" MD to HTML
-    description += markdown.markdown(open('md/description.md', 'r').read(), extensions=[TableExtension()])
-    print(tColors.BOLD  + tColors.GREEN + " ✓ " + tColors.BLUE + "Description" + tColors.NORMAL ) #+ description)
+    description = markdown.markdown(open('md/description.md', 'r').read())
+    print(tColors.BOLD  + tColors.GREEN + " ✓ " + tColors.BLUE + "Description" + tColors.NORMAL )
 
+    return description
+
+def get_courses():
     # "Courses" MD to HTML
+    courses = []
     for c in os.listdir('md/courses'):
         if c.endswith('.md'):
             tempC = "<div>"
@@ -45,23 +41,34 @@ def convert_markdown_to_html():
             courses.append(tempC)
     print(tColors.BOLD  + tColors.GREEN + " ✓ " + tColors.BLUE + "Courses and Example Coursework" + tColors.NORMAL ) #+ str(courses))
 
+    return courses
+
+def get_students():
     # "Students" MD to HTML
+    students = []
     for s in os.listdir('md/students'):
         if s.endswith('.md'):
             tempS = "<div>"
             tempS += markdown.markdown(open('md/students/' + s, 'r').read())
             tempS += "</div>"
             students.append(tempS)
-    print(tColors.BOLD  + tColors.GREEN + " ✓ " + tColors.BLUE + "Students" + tColors.NORMAL ) #+ str(students))
+    print(tColors.BOLD  + tColors.GREEN + " ✓ " + tColors.BLUE + "Students" + tColors.NORMAL )
 
+    return students
+
+def get_teachers():
     # "Teachers" MD to HTML
+    teachers = []
     for t in os.listdir('md/teachers'):
         if t.endswith('.md'):
             tempT = "<div>"
             tempT += markdown.markdown(open('md/teachers/' + t, 'r').read())
             tempT += "</div>"
             teachers.append(tempT)
-    print(tColors.BOLD  + tColors.GREEN + " ✓ " + tColors.BLUE + "Teachers" + tColors.NORMAL ) #+ str(teachers))
+    print(tColors.BOLD  + tColors.GREEN + " ✓ " + tColors.BLUE + "Teachers" + tColors.NORMAL )
+
+    return teachers
+
 
 def build_html():
     global html_out
@@ -69,13 +76,14 @@ def build_html():
     # == Description ==
     html_out += "<section id=\"description\">\n"
     html_out += "<h1>Description</h1>\n<div>\n"
-    html_out += description + "\n</div>\n</section>\n"
+    html_out += get_description() + "\n</div>\n</section>\n"
 
     # == Courses ==
     html_out += "<section id=\"courses\">\n"
     html_out += "<h1>Courses</h1>\n<div>\n"
-    if len(courses) > 0:
-        for c in courses:
+    c_ = get_courses()
+    if len(c_) > 0:
+        for c in c_:
             html_out += c + "\n"
     else:
         html_out += "<p style='text-align:center;'>There are no courses yet.</p>\n"
@@ -84,19 +92,22 @@ def build_html():
     # == Students ==
     html_out += "<section id=\"students\">\n"
     html_out += "<h1>Student Testimonies</h1>\n<div>\n"
-    if len(students) > 0:
-        for s in students:
+    s_ = get_students()
+    if len(s_) > 0:
+        for s in s_:
             html_out += s + "\n"
     else:
         html_out += "<p style='text-align:center;'>There are no student testimonies yet.</p>\n"
+    html_out += "</div>\n"
     html_out += "<p style='text-align:center;'>If you are a student and would like to add your testimony click <a href='https://forms.gle/4nQaBPgMga2XVb9H6'>here</a>.</p>"
-    html_out += "</div>\n</section>\n"
+    html_out +="</section>\n"
     
     # == Teachers ==
     html_out += "<section id=\"teachers\">\n"
     html_out += "<h1>Teachers</h1>\n<div>\n"
-    if len(teachers) > 0:
-        for t in teachers:
+    t_ = get_teachers()
+    if len(t_) > 0:
+        for t in t_:
             html_out += t + "\n"
     else:
         html_out += "<p style='text-align:center;'>There are no teachers yet.</p>\n"
@@ -117,7 +128,6 @@ def write_html_to_file():
 if __name__ == '__main__':
     os.system('cls')
     Reset_Build()
-    convert_markdown_to_html()
     build_html()
     write_html_to_file()
 
