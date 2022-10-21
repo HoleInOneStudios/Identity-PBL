@@ -85,6 +85,18 @@ h6 {
     margin: 1em;
 }
 
+#students>div>div {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(200px, 1fr));
+}
+
+#students>div>div>* {
+    padding: 1em;
+    border-top: 1px solid;
+}
+
+
+
 section {
 
     margin: 0;
