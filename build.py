@@ -20,8 +20,6 @@ class tColors:
     WARN = BOLD + WARNING + " ⚠ " + NORMAL
     HEAD = BOLD + HEADER + " ➜ " + NORMAL
 
-html_out = ""
-
 def Reset_Build():
     # Remove old build
     files = os.listdir('src/build/views')
@@ -159,9 +157,14 @@ def write_html_to_file():
 
     print(tColors.CHECK + tColors.BLUE + "Wrote HTML to file" + tColors.NORMAL)
 
-if __name__ == '__main__':
+def main():
     os.system('cls')
     Reset_Build()
+
     write_html_to_file()
 
     print(tColors.BOLD + tColors.GREEN + "===Build Complete===" + tColors.NORMAL)
+
+if __name__ == '__main__':
+    main()
+
