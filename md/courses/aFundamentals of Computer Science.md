@@ -4,4 +4,4 @@
 
 #### Example of Coursework
 
-none
+![image](./public/image/practicum.png)
