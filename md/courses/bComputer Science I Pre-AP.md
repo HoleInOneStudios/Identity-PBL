@@ -4,4 +4,4 @@ Course introduces students to programming with several web page languages includ
 
 #### Example of Coursework
 
-none
+![image](./public/image/fundamentala.png)

@@ -18,8 +18,7 @@
     * [x] GOOGLE FORM LINK [Here](https://forms.gle/4nQaBPgMga2XVb9H6)
   * [ ] get examples of coursework from all the courses in the tech pathway
     * [x] Fundamentals of Computer Science (H3032L)
-    * [ ] Computer Science I Pre-AP (H3005L)![image](https://user-images.githubusercontent.com/114014691/197312204-8065bc1e-ad30-45e8-a55a-4e3103f1988f.png)
-
+    * [x] Computer Science I Pre-AP (H3005L)
     * [x] AP Computer Science A (H3010L)
     * [ ] Practicum
 * [x] Benjamin Bowles
